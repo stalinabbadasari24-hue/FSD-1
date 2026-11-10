@@ -1,0 +1,69 @@
+<!-- Experiment 4: CSS Selector Forms, Question: exp_a -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 4a: CSS Selectors</title>
+    <link rel="stylesheet" href="exp_a.css">
+</head>
+<body>
+    <div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+      <strong>A stalin</strong><br>
+      Reg No: 24K61A1201
+    </div>
+
+    <div style="padding-top: 50px;">
+        <h1>CSS Selectors Demonstration</h1>
+        
+        <section class="demo-section">
+            <h2>i. Simple Selectors</h2>
+            <p>Element Selector: Applies to this paragraph because it's a &lt;p&gt;.</p>
+            <div id="unique-box">ID Selector (#unique-box)</div>
+            <div class="highlight-box">Class Selector (.highlight-box)</div>
+            <h3 class="grouped">Group Selector (h3.grouped)</h3>
+            <h4 class="grouped">Group Selector (h4.grouped)</h4>
+            <div>Notice that all elements have a subtle font change due to the Universal Selector (*).</div>
+        </section>
+
+        <section class="demo-section">
+            <h2>ii. Combinator Selectors</h2>
+            <div class="parent">
+                <span>Child (&gt; span) - Direct child of .parent</span>
+                <div>
+                    <span>Descendant (span) - Inside a div, inside .parent</span>
+                </div>
+            </div>
+            
+            <h4 id="adjacent-target">Target Element</h4>
+            <p class="adjacent">Adjacent Sibling (+ p) - Right after the target</p>
+            <p>General Sibling (~ p) - Somewhere after the target</p>
+            <p>General Sibling (~ p) - Somewhere after the target</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>iii. Pseudo-class Selector</h2>
+            <ul class="pseudo-list">
+                <li>First Item (:first-child)</li>
+                <li>Hover over me (:hover)</li>
+                <li>Last Item (:last-child)</li>
+            </ul>
+        </section>
+
+        <section class="demo-section">
+            <h2>iv. Pseudo-element Selector</h2>
+            <p class="quote-text">This paragraph uses ::before and ::after pseudo-elements to add quotation marks.</p>
+            <p class="first-line-demo">This paragraph uses ::first-line pseudo-element. The first line of this text should be styled differently if it wraps to multiple lines depending on your screen size.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>v. Attribute Selector</h2>
+            <form>
+                <input type="text" placeholder="[type='text']">
+                <input type="password" placeholder="[type='password']">
+                <a href="https://example.com" target="_blank">Link with target="_blank"</a>
+                <a href="https://example.com">Normal Link</a>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

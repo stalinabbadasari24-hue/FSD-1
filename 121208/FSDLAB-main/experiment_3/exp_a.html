@@ -1,0 +1,85 @@
+<!-- Experiment 3: HTML5 Semantic Tags and CSS Types, Question: exp_a -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 3a: HTML5 Semantic Tags</title>
+    <style>
+        body { font-family: sans-serif; padding: 60px 20px 20px; line-height: 1.6; }
+        header, nav, main, article, section, aside, footer { padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        header { background-color: #e3f2fd; }
+        nav { background-color: #c8e6c9; }
+        main { background-color: #fff3e0; display: flex; gap: 15px; }
+        .content { flex: 3; }
+        aside { flex: 1; background-color: #f3e5f5; margin-bottom: 0; }
+        article { background-color: #fff; }
+        section { background-color: #fafafa; }
+        footer { background-color: #eceff1; text-align: center; }
+        figure { border: 1px dashed #999; padding: 10px; text-align: center; background: #fff; margin: 10px 0; }
+        figcaption { font-style: italic; color: #555; margin-top: 5px; }
+        .highlight { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+      <strong>A stalin</strong><br>
+      Reg No: 24K61A1201
+    </div>
+
+    <!-- header: Represents introductory content or a set of navigational links for the page -->
+    <header>
+        <h1>My Awesome Blog</h1>
+        <p>A demonstration of semantic tags.</p>
+    </header>
+
+    <!-- nav: Represents a section of the page that links to other pages or to parts within the page -->
+    <nav>
+        <a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a>
+    </nav>
+
+    <!-- main: Represents the dominant content of the body of a document -->
+    <main>
+        <div class="content">
+            <!-- article: Represents a self-contained composition in a document, page, application, or site -->
+            <article>
+                <h2>Understanding Semantics</h2>
+                
+                <!-- section: Represents a standalone section — which doesn't have a more specific semantic element to represent it -->
+                <section>
+                    <h3>Why it matters</h3>
+                    <p>Semantic HTML introduces meaning to the web page rather than just presentation.</p>
+                </section>
+
+                <section>
+                    <h3>Example Image</h3>
+                    <!-- figure: Represents self-contained content, potentially with an optional caption -->
+                    <figure>
+                        <!-- Replace src with your own image -->
+                        <img src="https://via.placeholder.com/150" alt="Placeholder">
+                        <!-- figcaption: Represents a caption or legend for the rest of the contents of the figure element -->
+                        <figcaption>Figure 1: A placeholder image.</figcaption>
+                    </figure>
+                </section>
+                
+                <!-- div: A generic container for flow content, which does not inherently represent anything -->
+                <div style="padding: 10px; background: #eee;">
+                    This is a generic <code>&lt;div&gt;</code> containing some text with a 
+                    <!-- span: A generic inline container for phrasing content, which does not inherently represent anything -->
+                    <span class="highlight">highlighted &lt;span&gt;</span> element.
+                </div>
+            </article>
+        </div>
+
+        <!-- aside: Represents a portion of a document whose content is only indirectly related to the document's main content -->
+        <aside>
+            <h3>Sidebar</h3>
+            <p>Related links and widgets go here.</p>
+        </aside>
+    </main>
+
+    <!-- footer: Represents a footer for its nearest ancestor sectioning content or sectioning root element -->
+    <footer>
+        <p>&copy; 2026 My Awesome Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>

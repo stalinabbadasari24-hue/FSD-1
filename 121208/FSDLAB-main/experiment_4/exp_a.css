@@ -1,0 +1,119 @@
+/* Experiment 4: CSS Selector Forms, Question: exp_a CSS */
+
+/* i. Simple Selectors */
+* { /* Universal Selector */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+p { /* Element Selector */
+    color: #333;
+}
+#unique-box { /* ID Selector */
+    background-color: #fce4ec;
+    border: 2px solid #e91e63;
+    padding: 10px;
+    margin: 5px 0;
+}
+.highlight-box { /* Class Selector */
+    background-color: #e3f2fd;
+    border: 2px solid #2196f3;
+    padding: 10px;
+    margin: 5px 0;
+}
+h3.grouped, h4.grouped { /* Group Selector */
+    color: #ff9800;
+    margin: 5px 0;
+}
+
+/* ii. Combinator Selectors */
+.parent {
+    border: 1px dashed #999;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.parent span { /* Descendant Combinator */
+    color: #4caf50;
+    font-weight: bold;
+    display: block;
+}
+.parent > span { /* Child Combinator */
+    color: #9c27b0;
+    background-color: #f3e5f5;
+    padding: 2px;
+}
+#adjacent-target + p.adjacent { /* Adjacent Sibling Combinator */
+    background-color: #fff9c4;
+    border-left: 4px solid #fbc02d;
+    padding-left: 10px;
+}
+#adjacent-target ~ p { /* General Sibling Combinator */
+    font-style: italic;
+    color: #795548;
+}
+
+/* iii. Pseudo-class Selector */
+.pseudo-list {
+    list-style-type: none;
+    padding: 0;
+}
+.pseudo-list li {
+    padding: 8px;
+    background-color: #eee;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+.pseudo-list li:first-child { /* :first-child pseudo-class */
+    border-top: 3px solid #00bcd4;
+}
+.pseudo-list li:last-child { /* :last-child pseudo-class */
+    border-bottom: 3px solid #00bcd4;
+}
+.pseudo-list li:hover { /* :hover pseudo-class */
+    background-color: #b2ebf2;
+    cursor: pointer;
+}
+
+/* iv. Pseudo-element Selector */
+.quote-text::before { /* ::before pseudo-element */
+    content: "« ";
+    font-size: 1.5em;
+    color: #f44336;
+}
+.quote-text::after { /* ::after pseudo-element */
+    content: " »";
+    font-size: 1.5em;
+    color: #f44336;
+}
+.first-line-demo::first-line { /* ::first-line pseudo-element */
+    font-weight: bold;
+    color: #3f51b5;
+}
+
+/* v. Attribute Selector */
+input[type="text"] { /* Attribute Selector */
+    border: 2px solid #8bc34a;
+    padding: 8px;
+    border-radius: 4px;
+}
+a[target="_blank"] { /* Attribute Selector */
+    background-color: #ffe0b2;
+    padding: 4px 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* General Layout Styles */
+.demo-section {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+.demo-section h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}

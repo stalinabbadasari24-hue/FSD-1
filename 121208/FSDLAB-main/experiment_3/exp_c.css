@@ -1,0 +1,19 @@
+/* Experiment 3: HTML5 Semantic Tags and CSS Types, Question: exp_c external CSS */
+
+/* Selector: body
+   Property: font-family
+   Value: sans-serif */
+body {
+    font-family: sans-serif;
+}
+
+/* Selector: .external-styled-box
+   Property: background-color, border, padding, margin, border-radius
+   Value: #e8f5e9, 2px solid #43a047, 20px, 10px 0, 5px */
+.external-styled-box {
+    background-color: #e8f5e9;
+    border: 2px solid #43a047;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+}

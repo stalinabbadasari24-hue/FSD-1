@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Experiment 2d - Frameset</title>
+</head>
+<!-- Experiment 2, Question d: Frameset page split into 3 parts -->
+<!-- Exception: exp_d.html (frameset page) should NOT have the name badge, child frames do -->
+<frameset cols="33%,34%,33%">
+  <frame src="exp_d_frame1.html" name="imageFrame" noresize="noresize">
+  <frame src="exp_d_frame2.html" name="textFrame" noresize="noresize">
+  <frame src="exp_d_frame3.html" name="linkFrame" noresize="noresize">
+  <noframes>
+    <body>
+      <p>Your browser does not support frames.</p>
+    </body>
+  </noframes>
+</frameset>
+</html>

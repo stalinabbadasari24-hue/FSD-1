@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Object Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; padding-top: 60px; line-height: 1.6; }
+        h1 { color: #333; }
+        .output { background: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 4px; margin-top: 10px; }
+        table { border-collapse: collapse; width: 50%; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+<div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+  <strong>A stalin</strong><br>
+  Reg No: 24K61A1201
+</div>
+    <!-- Experiment 7d: Math Object -->
+    <h1>Math Object Methods</h1>
+    <div id="output" class="output"></div>
+    <script>
+        let out = document.getElementById("output");
+        let html = "<ul>";
+        html += "<li><b>Math.PI:</b> " + Math.PI + "</li>";
+        html += "<li><b>Math.random():</b> " + Math.random() + "</li>";
+        html += "<li><b>Math.max(10, 20, 5):</b> " + Math.max(10, 20, 5) + "</li>";
+        html += "<li><b>Math.floor(4.8):</b> " + Math.floor(4.8) + "</li>";
+        html += "<li><b>Math.sqrt(16):</b> " + Math.sqrt(16) + "</li>";
+        html += "<li><b>Math.pow(2, 3):</b> " + Math.pow(2, 3) + "</li>";
+        html += "</ul>";
+        out.innerHTML = html;
+    </script>
+</body>
+</html>

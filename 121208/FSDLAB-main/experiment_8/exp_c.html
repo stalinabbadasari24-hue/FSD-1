@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 8C - Printing Loops</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 60px 20px 20px; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; display: flex; gap: 20px; }
+        .section { flex: 1; background: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #ddd; }
+        h3 { margin-top: 0; color: #0056b3; }
+        .output { background: #fff; padding: 10px; border: 1px solid #ccc; min-height: 200px; }
+    </style>
+</head>
+<body>
+<div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+  <strong>K H N V Phani Kumar</strong><br>
+  Reg No: 24K61A1259
+</div>
+
+<!-- Experiment 8c: Print numbers 1 to 10 three ways -->
+<h2 style="text-align: center;">Print 1 to 10 using Loops</h2>
+<div class="container">
+    <div class="section">
+        <h3>Using for loop</h3>
+        <div id="forOutput" class="output"></div>
+    </div>
+    <div class="section">
+        <h3>Using while loop</h3>
+        <div id="whileOutput" class="output"></div>
+    </div>
+    <div class="section">
+        <h3>Using do-while loop</h3>
+        <div id="doWhileOutput" class="output"></div>
+    </div>
+</div>
+
+<script>
+    // For Loop
+    var forStr = "";
+    for(let i = 1; i <= 10; i++) {
+        forStr += i + "<br>";
+    }
+    document.getElementById('forOutput').innerHTML = forStr;
+
+    // While Loop
+    var whileStr = "";
+    var j = 1;
+    while(j <= 10) {
+        whileStr += j + "<br>";
+        j++;
+    }
+    document.getElementById('whileOutput').innerHTML = whileStr;
+
+    // Do-While Loop
+    var doWhileStr = "";
+    var k = 1;
+    do {
+        doWhileStr += k + "<br>";
+        k++;
+    } while(k <= 10);
+    document.getElementById('doWhileOutput').innerHTML = doWhileStr;
+</script>
+</body>
+</html>

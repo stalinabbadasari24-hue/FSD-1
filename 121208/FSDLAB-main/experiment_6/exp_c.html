@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Input and Type Conversion</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; padding-top: 60px; line-height: 1.6; }
+        h1 { color: #333; }
+        .output { background: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 4px; margin-top: 10px; }
+        table { border-collapse: collapse; width: 50%; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+<div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+  <strong>A stalin</strong><br>
+  Reg No: 24K61A1201
+</div>
+    <!-- Experiment 6c: Take Input in JS & Type Conversion -->
+    <h1>JavaScript Input and Type Conversion</h1>
+    <p>Demonstrating input via prompt and HTML forms, along with type conversion.</p>
+    
+    <div>
+        <label for="numInput">Enter a number:</label>
+        <input type="text" id="numInput" value="42.5">
+        <button onclick="processInput()">Process Input</button>
+    </div>
+    
+    <div id="output" class="output"></div>
+
+    <script>
+        function processInput() {
+            // Read from HTML form
+            let strVal = document.getElementById("numInput").value;
+            
+            // Read from prompt
+            let promptVal = prompt("Enter another number to add:", "10");
+            
+            let resultHTML = "<p>Original string from input: '" + strVal + "' (type: " + typeof strVal + ")</p>";
+            
+            // Type conversion
+            let num1 = Number(strVal);
+            let num2 = parseInt(strVal);
+            let num3 = parseFloat(strVal);
+            let strNum = String(num1);
+            let added = Number(strVal) + Number(promptVal);
+            
+            resultHTML += "<ul>";
+            resultHTML += "<li>Number(): " + num1 + "</li>";
+            resultHTML += "<li>parseInt(): " + num2 + "</li>";
+            resultHTML += "<li>parseFloat(): " + num3 + "</li>";
+            resultHTML += "<li>String(): '" + strNum + "' (type: " + typeof strNum + ")</li>";
+            resultHTML += "<li>Added value (input + prompt): " + added + "</li>";
+            resultHTML += "</ul>";
+            
+            document.getElementById("output").innerHTML = resultHTML;
+        }
+    </script>
+</body>
+</html>

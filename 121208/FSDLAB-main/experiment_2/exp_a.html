@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Experiment 2a - Tables</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding-top: 60px; padding-left: 20px; }
+    table { border-collapse: collapse; width: 50%; margin-top: 20px; }
+    th, td { border: 1px solid black; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+<!-- Experiment 2, Question a: Explain tables and merged cells -->
+<div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+  <strong>A stalin</strong><br>
+  Reg No: 24K61A1201
+</div>
+
+<h2>Basic Table with Merged Cells</h2>
+<p>Demonstrating rowspan and colspan.</p>
+
+<table>
+  <tr>
+    <th colspan="3">Student Information</th>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Grade</th>
+  </tr>
+  <tr>
+    <td>John Doe</td>
+    <td>20</td>
+    <td rowspan="2">A</td>
+  </tr>
+  <tr>
+    <td>Jane Smith</td>
+    <td>21</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!-- Experiment 5: CSS Color, Background, Font, Text, Box Model, Question: exp_d -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 5d: CSS Box Model</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 60px 20px 20px; text-align: center; background-color: #f4f4f9; }
+        
+        /* The actual Box Model element to demonstrate */
+        .box-model-demo {
+            width: 200px;
+            height: 100px;
+            background-color: #bbdefb; /* Content background */
+            padding: 30px;              /* Padding */
+            border: 15px solid #1976d2; /* Border */
+            margin: 40px auto;          /* Margin (auto for centering horizontally) */
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #0d47a1;
+            box-sizing: content-box;    /* Explicitly use content-box to show additive sizes */
+        }
+
+        /* Diagram styles for explanation */
+        .diagram-container {
+            margin: 50px auto;
+            max-width: 600px;
+            text-align: left;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .legend-item { margin: 10px 0; padding: 10px; border-radius: 4px; font-weight: bold; }
+        .legend-margin { background-color: #fbe9e7; border: 2px dashed #d84315; color: #d84315; }
+        .legend-border { background-color: #1976d2; color: #fff; }
+        .legend-padding { background-color: #e8f5e9; border: 2px dashed #2e7d32; color: #2e7d32; }
+        .legend-content { background-color: #bbdefb; border: 2px solid #1976d2; color: #0d47a1; }
+
+    </style>
+</head>
+<body>
+    <div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+      <strong>A stalin</strong><br>
+      Reg No: 24K61A1201
+    </div>
+
+    <h1>The CSS Box Model</h1>
+    <p>Every HTML element is essentially a rectangular box. The box model consists of margins, borders, padding, and the actual content.</p>
+
+    <!-- The actual styled element -->
+    <div style="background-color: #fbe9e7; border: 2px dashed #d84315; display: inline-block;">
+        <div style="color: #d84315; font-weight: bold; padding-top: 5px;">Margin (40px)</div>
+        <div class="box-model-demo">
+            Content Box<br>
+            (200px &times; 100px)
+        </div>
+    </div>
+
+    <div class="diagram-container">
+        <h2>Box Model Layers Explained</h2>
+        
+        <div class="legend-item legend-margin">
+            Margin: Clears an area outside the border. The margin is transparent. (Shown above as dashed outline)
+        </div>
+        
+        <div class="legend-item legend-border">
+            Border: A border that goes around the padding and content. (Solid dark blue: 15px)
+        </div>
+        
+        <div class="legend-item legend-padding">
+            Padding: Clears an area around the content. The padding is transparent, but shows the element's background color. (Space between text and border: 30px)
+        </div>
+        
+        <div class="legend-item legend-content">
+            Content: The content of the box, where text and images appear. (Light blue background: 200px width, 100px height)
+        </div>
+    </div>
+
+</body>
+</html>

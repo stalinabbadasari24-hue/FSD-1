@@ -1,0 +1,77 @@
+<!-- Experiment 5: CSS Color, Background, Font, Text, Box Model, Question: exp_b -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 5b: Background Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Extra height to demonstrate scrolling effect */
+            height: 2000px; 
+            background-color: #f0f0f0;
+        }
+
+        .header-content {
+            padding: 70px 20px 20px;
+            background: #fff;
+            margin-bottom: 300px;
+        }
+
+        /* 
+           Background images themselves cannot be rotated via CSS properties.
+           To rotate a background image, we must apply the background image to a 
+           wrapper element (like a div) and rotate that entire element using 
+           the 'transform' property. 
+        */
+        .bg-wrapper {
+            width: 100%;
+            height: 400px;
+            /* Rotate the wrapper element to tilt the background */
+            transform: rotate(-5deg); 
+            
+            /* Apply the background to the wrapper */
+            background-image: url('assets/bg-image.jpg');
+            background-repeat: no-repeat;
+            
+            /* Position the image */
+            background-position: center center;
+            background-size: cover;
+            
+            /* Make the background fixed in place relative to the viewport when scrolling */
+            background-attachment: fixed;
+            
+            border-top: 5px solid #333;
+            border-bottom: 5px solid #333;
+        }
+
+        .scroll-text {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 100px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+      <strong>A stalin</strong><br>
+      Reg No: 24K61A1201
+    </div>
+
+    <div class="header-content">
+        <h1>Background Image Properties</h1>
+        <p>Scroll down to see the fixed, rotated background image effect.</p>
+        <p><em>Note: The background-image property alone cannot be rotated. We achieve the tilt by applying a <code>transform: rotate()</code> to a wrapper <code>&lt;div&gt;</code> that contains the background image.</em></p>
+    </div>
+
+    <!-- Wrapper div to handle rotation and background -->
+    <div class="bg-wrapper"></div>
+
+    <div class="scroll-text">
+        Keep scrolling... Notice how the background image stays fixed in place!
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!-- Experiment 5: CSS Color, Background, Font, Text, Box Model, Question: exp_a -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 5a: CSS Colors</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 60px 20px 20px; }
+        .color-box {
+            width: 250px;
+            padding: 20px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #333; /* Default text color, overridden if background is dark */
+        }
+        
+        .named { background-color: Tomato; color: white; }
+        .hex { background-color: #3cb371; color: white; }
+        .rgb { background-color: rgb(106, 90, 205); color: white; }
+        .rgba { background-color: rgba(255, 99, 71, 0.5); } /* Semi-transparent Tomato */
+        .hsl { background-color: hsl(240, 100%, 50%); color: white; } /* Pure Blue */
+        .hsla { background-color: hsla(120, 100%, 25%, 0.4); } /* Semi-transparent Dark Green */
+    </style>
+</head>
+<body>
+    <div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+      <strong>A stalin</strong><br>
+      Reg No: 24K61A1201
+    </div>
+
+    <h1>CSS Color Formats</h1>
+
+    <div class="color-box named">
+        Named Color<br>
+        <span style="font-weight:normal;">background-color: Tomato;</span>
+    </div>
+
+    <div class="color-box hex">
+        HEX Color<br>
+        <span style="font-weight:normal;">background-color: #3cb371;</span>
+    </div>
+
+    <div class="color-box rgb">
+        RGB Color<br>
+        <span style="font-weight:normal;">background-color: rgb(106, 90, 205);</span>
+    </div>
+
+    <div class="color-box rgba">
+        RGBA Color (with opacity)<br>
+        <span style="font-weight:normal;">background-color: rgba(255, 99, 71, 0.5);</span>
+    </div>
+
+    <div class="color-box hsl">
+        HSL Color<br>
+        <span style="font-weight:normal;">background-color: hsl(240, 100%, 50%);</span>
+    </div>
+
+    <div class="color-box hsla">
+        HSLA Color (with opacity)<br>
+        <span style="font-weight:normal;">background-color: hsla(120, 100%, 25%, 0.4);</span>
+    </div>
+
+</body>
+</html>

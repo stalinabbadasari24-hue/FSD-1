@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Object and Validation</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; padding-top: 60px; line-height: 1.6; }
+        h1 { color: #333; }
+        .output { background: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 4px; margin-top: 10px; }
+        table { border-collapse: collapse; width: 50%; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+<div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+  <strong>A stalin</strong><br>
+  Reg No: 24K61A1201
+</div>
+    <!-- Experiment 7f: Regex Object -->
+    <h1>Regex Object and Validation</h1>
+    <div id="output" class="output"></div>
+    <script>
+        let out = document.getElementById("output");
+        let html = "<h3>Regex Tests</h3>";
+        
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let testEmail1 = "test@example.com";
+        let testEmail2 = "invalid-email";
+        
+        html += "<p><b>test() on '" + testEmail1 + "':</b> " + emailRegex.test(testEmail1) + "</p>";
+        html += "<p><b>test() on '" + testEmail2 + "':</b> " + emailRegex.test(testEmail2) + "</p>";
+        
+        let phoneRegex = /^\d{10}$/;
+        let testPhone = "1234567890";
+        
+        let execResult = phoneRegex.exec(testPhone);
+        html += "<p><b>exec() on '" + testPhone + "':</b> " + (execResult ? execResult[0] : "null") + "</p>";
+        
+        let text = "My numbers are 123 and 456.";
+        let matchResult = text.match(/\d+/g);
+        html += "<p><b>String.match() on text:</b> " + matchResult.join(", ") + "</p>";
+        
+        out.innerHTML = html;
+    </script>
+</body>
+</html>

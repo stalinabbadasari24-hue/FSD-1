@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 9B - Separate Function Buttons</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 60px 20px 20px; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
+        input[type="text"] { width: 100%; padding: 10px; margin-bottom: 20px; box-sizing: border-box; }
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
+        button { flex: 1; min-width: 120px; padding: 10px; border: none; border-radius: 4px; cursor: pointer; color: white; font-weight: bold; }
+        .btn-fact { background: #007bff; } .btn-fact:hover { background: #0056b3; }
+        .btn-fibo { background: #28a745; } .btn-fibo:hover { background: #218838; }
+        .btn-prime { background: #ffc107; color: #333; } .btn-prime:hover { background: #e0a800; }
+        .btn-pali { background: #17a2b8; } .btn-pali:hover { background: #117a8b; }
+        #singleResult { margin-top: 20px; padding: 15px; background: #fff; border: 1px solid #ccc; border-radius: 4px; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+<div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+  <strong>K H N V Phani Kumar</strong><br>
+  Reg No: 24K61A1259
+</div>
+
+<!-- Experiment 9b: Separate buttons for functions -->
+<div class="container">
+    <h2>Number Analyzer (Separate Buttons)</h2>
+    <input type="text" id="inputValue" placeholder="Enter a number (or string for palindrome)">
+    
+    <div class="btn-group">
+        <button class="btn-fact" onclick="showFactorial()">Factorial</button>
+        <button class="btn-fibo" onclick="showFibonacci()">Fibonacci</button>
+        <button class="btn-prime" onclick="showPrimes()">Prime</button>
+        <button class="btn-pali" onclick="showPalindrome()">Palindrome</button>
+    </div>
+
+    <div id="singleResult">Result will appear here...</div>
+</div>
+
+<script>
+    // Reusing functions from Exp 9a
+    function getFactorial(n) {
+        if (isNaN(n)) return "Invalid number";
+        if (n < 0) return "Undefined for negative numbers";
+        if (n === 0 || n === 1) return 1;
+        let fact = 1;
+        for (let i = 2; i <= n; i++) fact *= i;
+        return fact;
+    }
+
+    // Assumption: Fibonacci up to that number means "generate N terms"
+    function getFibonacci(n) {
+        if (isNaN(n)) return "Invalid number";
+        if (n <= 0) return "Please enter a positive integer";
+        if (n === 1) return "0";
+        let fib = [0, 1];
+        for (let i = 2; i < n; i++) {
+            fib.push(fib[i-1] + fib[i-2]);
+        }
+        return fib.join(", ");
+    }
+
+    function getPrimes(n) {
+        if (isNaN(n)) return "Invalid number";
+        if (n < 2) return "No primes found";
+        let primes = [];
+        for (let i = 2; i <= n; i++) {
+            let isPrime = true;
+            for (let j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) primes.push(i);
+        }
+        return primes.join(", ");
+    }
+
+    function isPalindrome(str) {
+        if (!str) return "Please enter a value";
+        let cleanStr = str.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+        let reversed = cleanStr.split('').reverse().join('');
+        return cleanStr === reversed ? "Yes, it's a palindrome" : "No, it's not a palindrome";
+    }
+
+    // Button click handlers
+    function showFactorial() {
+        let val = parseInt(document.getElementById('inputValue').value);
+        document.getElementById('singleResult').innerHTML = `<b>Factorial:</b> ${getFactorial(val)}`;
+    }
+    
+    function showFibonacci() {
+        let val = parseInt(document.getElementById('inputValue').value);
+        document.getElementById('singleResult').innerHTML = `<b>Fibonacci (${val} terms):</b> ${getFibonacci(val)}`;
+    }
+    
+    function showPrimes() {
+        let val = parseInt(document.getElementById('inputValue').value);
+        document.getElementById('singleResult').innerHTML = `<b>Primes up to ${val}:</b> ${getPrimes(val)}`;
+    }
+    
+    function showPalindrome() {
+        let val = document.getElementById('inputValue').value;
+        document.getElementById('singleResult').innerHTML = `<b>Palindrome Check:</b> ${isPalindrome(val)}`;
+    }
+</script>
+</body>
+</html>

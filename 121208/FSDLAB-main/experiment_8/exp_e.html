@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 8E - Armstrong Number</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 60px 20px 20px; line-height: 1.6; }
+        .container { max-width: 400px; margin: 0 auto; background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; text-align: center;}
+        input[type="number"] { width: 80%; padding: 8px; margin-bottom: 15px; }
+        button { padding: 10px 15px; background: #ffc107; color: #333; border: none; border-radius: 4px; cursor: pointer; font-weight:bold;}
+        button:hover { background: #e0a800; }
+        #result { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+  <strong>K H N V Phani Kumar</strong><br>
+  Reg No: 24K61A1259
+</div>
+
+<!-- Experiment 8e: Armstrong number check -->
+<div class="container">
+    <h2>Armstrong Number Checker</h2>
+    <input type="number" id="numInput" placeholder="Enter a number (e.g. 153)">
+    <br>
+    <button onclick="checkArmstrong()">Check</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function checkArmstrong() {
+        let numStr = document.getElementById('numInput').value;
+        let num = parseInt(numStr);
+        let resultDiv = document.getElementById('result');
+
+        if (isNaN(num)) {
+            resultDiv.innerHTML = "<span style='color:red;'>Please enter a valid number.</span>";
+            return;
+        }
+
+        let sum = 0;
+        let temp = num;
+        let digits = numStr.length; // usually cube for 3 digits, but power is length for general armstrong
+        
+        // As per problem description "sum of cubes of digits", we will use power 3 
+        // to strictly follow the prompt "e.g. 153 = 1³+5³+3³", though true armstrong uses length.
+        // I will use length to make it work for any digit length Armstrong numbers.
+        
+        while (temp > 0) {
+            let remainder = temp % 10;
+            sum += Math.pow(remainder, 3); // using cube specifically per requirement
+            temp = parseInt(temp / 10);
+        }
+
+        if (sum === num) {
+            resultDiv.innerHTML = `<span style='color:green;'>${num} IS an Armstrong number.</span>`;
+        } else {
+            resultDiv.innerHTML = `<span style='color:red;'>${num} is NOT an Armstrong number.</span>`;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-defined Object</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; padding-top: 60px; line-height: 1.6; }
+        h1 { color: #333; }
+        .output { background: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 4px; margin-top: 10px; }
+        table { border-collapse: collapse; width: 50%; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+<div style="position:fixed; top:8px; left:8px; background:#f2f2f2; border:1px solid #999; padding:6px 10px; font-family:Arial, sans-serif; font-size:13px; z-index:9999; border-radius:4px;">
+  <strong>A stalin</strong><br>
+  Reg No: 24K61A1201
+</div>
+    <!-- Experiment 7h: User-defined Object -->
+    <h1>User-defined Object</h1>
+    <div id="output" class="output"></div>
+    <script>
+        class Student {
+            constructor(name, rollNo) {
+                this._name = name;
+                this._rollNo = rollNo;
+                this.course = "Web Technologies";
+            }
+            
+            get name() {
+                return this._name;
+            }
+            
+            set name(newName) {
+                this._name = newName;
+            }
+            
+            getDetails() {
+                return this._name + " (" + this._rollNo + ") - " + this.course;
+            }
+        }
+        
+        let student = new Student("Alice", "101");
+        
+        // Use setter
+        student.name = "Alice Smith";
+        
+        let out = document.getElementById("output");
+        let html = "<p><b>Student Details:</b> " + student.getDetails() + "</p>";
+        html += "<p><b>Property access (course):</b> " + student.course + "</p>";
+        html += "<p><b>Getter access (name):</b> " + student.name + "</p>";
+        
+        out.innerHTML = html;
+    </script>
+</body>
+</html>
